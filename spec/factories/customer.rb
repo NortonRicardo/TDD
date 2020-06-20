@@ -10,6 +10,7 @@ FactoryBot.define do
 
     name Faker::Name.name
     email Faker::Internet.email
+    address Faker::Address.community
 
     factory :customer_vip do
       vip true

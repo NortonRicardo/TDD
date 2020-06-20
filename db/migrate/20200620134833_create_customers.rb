@@ -7,6 +7,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.string :email
       t.boolean :vip
       t.integer :days_to_pay
+      t.string :address
       t.timestamps
     end
   end

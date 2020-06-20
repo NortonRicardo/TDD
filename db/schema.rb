@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_06_20_163113) do
     t.string "email"
     t.boolean "vip"
     t.integer "days_to_pay"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

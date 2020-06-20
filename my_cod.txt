@@ -16,6 +16,11 @@ bundle exec spring binstub --all
 --require spec_helper
 --format documentation
 
+---------- colocar dentro do  spec_herper ----------
+config.before(:suite) do
+ FactoryBot.lint
+end
+
 
 ---------- create all bd ----------
 rails db:create:all

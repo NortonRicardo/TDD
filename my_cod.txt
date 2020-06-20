@@ -1,0 +1,9 @@
+
+---------- gem para rspec ---------- 
+group :development, :test do
+gem 'rspec-rails', '~> 3.6'
+end
+
+
+---------- gerar teste com rspec ---------- 
+rails g rspec:install

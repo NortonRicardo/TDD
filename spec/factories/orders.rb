@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :order do
-    description { "MyString" }
-    customer { nil }
+    sequence(:description) { |t| "Pedido numero - #{t}" }
+    customer
   end
 end

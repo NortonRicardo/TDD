@@ -1,5 +1,16 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Order, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'Tem 1 Pedido' do
+    order = create(:order)
+    expect(order.customer).to be_kind_of(Customer)
+  end
+
+  it 'Tem 3 Pedido' do
+    orders = create_list(:order, 3)
+    puts orders.inspect
+    expect(orders.size).to eq(3)
+  end
 end

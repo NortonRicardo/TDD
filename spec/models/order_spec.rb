@@ -13,4 +13,9 @@ RSpec.describe Order, type: :model do
     puts orders.inspect
     expect(orders.size).to eq(3)
   end
+
+  it 'has_many' do
+    customer = create(:customer, :with_orders)
+    expect(customer.orders.size).to eq(3)
+  end
 end

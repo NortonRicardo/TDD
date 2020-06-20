@@ -24,3 +24,7 @@ end
 
 ---------- create all bd ----------
 rails db:create:all
+
+
+rails g model Category description:string
+rails g model Product description:string price:decimal category:references

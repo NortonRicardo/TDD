@@ -9,7 +9,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it 'Customer Teste vip' do
-    customer = create(:user)
+    customer = create(:customer_vip)
     expect(customer.vip).not_to be_falsey
   end
 
@@ -19,4 +19,19 @@ RSpec.describe Customer, type: :model do
   end
 
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
+
+  it 'Usando attributes For' do
+    attrs = attributes_for(:customer)
+    puts attrs
+  end
+
+  it 'create customer email dowcase' do
+    customer = create(:customer_vip, email: 'NORTON@NORTON.COM')
+    expect(customer.email).to eq(customer.email.downcase)
+  end
+
+  it 'Atributo Transitorio' do
+    customer = create(:customer_vip, upcased: true)
+    expect(customer.name.upcase).to eq(customer.name)
+  end
 end

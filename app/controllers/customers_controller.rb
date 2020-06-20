@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class CustomersController < ApplicationController
-  # before_action :set_customer, only: %i[show edit update destroy]
+  before_action :authenticate_member!, except: %i[index]
+  before_action :set_customer, only: %i[show edit update destroy]
 
   def index
     @customers = Customer.all

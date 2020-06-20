@@ -1,9 +1,21 @@
 
----------- gem para rspec ---------- 
+---------- gem para rspec ----------
 group :development, :test do
-gem 'rspec-rails', '~> 3.6'
+  gem 'rspec-rails', '~> 3.6'
+end
+group :development do
+  gem 'spring-commands-rspec'
 end
 
 
----------- gerar teste com rspec ---------- 
+---------- gerar teste com rspec ----------
 rails g rspec:install
+bundle exec spring binstub --all
+
+---------- colocar dentro do  .rspec ----------
+--require spec_helper
+--format documentation
+
+
+---------- create all bd ----------
+rails db:create:all
